@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illuminate Media - Your Vision, Our Lens</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">ILLUMINATE MEDIA</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#testimonials">Clients</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="section">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="public/home_loop.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="hero-content">
+            <h1>Bringing Stories to Life</h1>
+            <p class="tagline">Your Vision, Our Lens</p>
+            <a href="#projects" class="btn"><i class="fas fa-video"></i> View Portfolio</a>
+            <a href="#contact" class="btn" style="background: var(--primary-color); color: var(--dark-bg);"><i class="fas fa-phone"></i> Get a Quote</a>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Our Foundation</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Company Story & Vision</h3>
+                    <p>Illuminate Media was born from a shared love for the moving image in 2015. Our vision is simple: *To set the gold standard in visual storytelling.* We believe every client has a compelling narrative, and we use the latest technology and timeless creative principles to bring that narrative to the global stage.</p>
+                    <p>We pride ourselves on our collaborative approach, ensuring your voice is heard at every stage, from concept development to final color grade.</p>
+                    <br>
+                    <div style="text-align: center;">
+                        <a href="#projects" class="btn">View Our Process <i class="fas fa-timeline"></i></a>
+                    </div>
+                </div>
+                <div class="bts-video-section">
+                    <h4><i class="fas fa-film"></i> Behind The Lens</h4>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="video-thumbnail-link">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Behind the Scenes Thumbnail" class="video-thumbnail">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </a>
+                    <p style="margin-top: 10px;">A glimpse into the making of our latest commercial shoot.</p>
+                </div>
+            </div>
+
+            <hr style="border-color: #333; margin: var(--spacing-md) 0;">
+            
+            <h3>Our Arsenal & Recognition</h3>
+            
+            <div class="equipment-list">
+                <h4>Cutting-Edge Equipment</h4>
+                <ul>
+                    <li><i class="fas fa-camera"></i> RED Komodo 6K</li>
+                    <li><i class="fas fa-drone"></i> DJI Inspire 3 Drone</li>
+                    <li><i class="fas fa-lightbulb"></i> Aputure Lighting Kit</li>
+                    <li><i class="fas fa-microphone"></i> Sennheiser Audio</li>
+                    <li><i class="fas fa-desktop"></i> DaVinci Resolve Studio</li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <p style="color: var(--primary-color); font-weight: 600;">Awards: Regional Telly Award (2023), Best Corporate Film (FilmFest 2022)</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cinematic-portfolio">
+
+        <section id="projects" class="portfolio-subsection">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Our Work</h2>
+                    <p>A Showcase of Our Cinematic Productions</p>
+                </header>
+                <div class="project-grid">
+                    
+                    <article class="project-card" 
+                        data-title="Neon Nights - Music Video"
+                        data-client="The Midnight Drive"
+                        data-date="2025-10-15"
+                        data-desc="We produced a high-energy music video for The Midnight Drive's latest single. This project involved complex lighting setups, dynamic camera movement, and stylized color grading to capture a neo-noir aesthetic."
+                        data-video-src="public/music-eve.mp4">
+                        
+                        <img src="public/musicimg.png" alt="Neon Nights Music Video Thumbnail">
+                        <div class="project-card-overlay">
+                            <div class="project-card-info">
+                                <h3>Neon Nights</h3>
+                                <span>The Midnight Drive</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card"
+                        data-title="Legacy - Brand Anthem"
+                        data-client="Aurelius Watches"
+                        data-date="2025-09-01"
+                        data-desc="A cinematic brand film exploring the themes of heritage and craftsmanship. We used macro cinematography and a custom orchestral score to create a sense of timeless elegance."
+                        data-video-src="public/watch.mp4">
+
+                        <img src="public/watchimg.png" alt="Brand Anthem Thumbnail">
+                        <div class="project-card-overlay">
+                            <div class="project-card-info">
+                                <h3>Legacy</h3>
+                                <span>Aurelius Watches</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card"
+                        data-title="The Innovator - Documentary Short"
+                        data-client="Quantum Dynamics"
+                        data-date="2025-07-20"
+                        data-desc="A short documentary profiling the founder of a tech startup. Our team handled interviews, b-roll capture, and animated infographics to tell a compelling human story."
+                        data-video-src="public/startup_eve.mp4">
+                        
+                        <img src="public/startupimg.png" alt="Documentary Short Thumbnail">
+                        <div class="project-card-overlay">
+                            <div class="project-card-info">
+                                <h3>The Innovator</h3>
+                                <span>Quantum Dynamics</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" 
+                        data-title="Echoes of the Past - Short Film"
+                        data-client="Independent Production"
+                        data-date="2025-06-01"
+                        data-desc="An evocative narrative short film, exploring themes of memory and loss. We provided full production services, from script development to final color grade and sound mix, creating a rich, melancholic atmosphere."
+                        data-video-src="public/past_song.mp4">
+                        
+                        <img src="public/pastimg.png" alt="Short Film Thumbnail">
+                        <div class="project-card-overlay">
+                            <div class="project-card-info">
+                                <h3>Echoes of the Past</h3>
+                                <span>Independent Production</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card"
+                        data-title="Culinary Journey - Commercial"
+                        data-client="Gourmet Foods Co."
+                        data-date="2025-04-10"
+                        data-desc="A series of visually rich commercials highlighting premium food products. Our focus was on vibrant food cinematography and elegant pacing to appeal to a sophisticated audience."
+                        data-video-src="public/food_eve.mp4">
+
+                        <img src="public/foodimg.png" alt="Culinary Commercial Thumbnail">
+                        <div class="project-card-overlay">
+                            <div class="project-card-info">
+                                <h3>Culinary Journey</h3>
+                                <span>Gourmet Foods Co.</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card"
+                        data-title="Future Forward - Event Highlight"
+                        data-client="Global Innovation Summit"
+                        data-date="2025-03-05"
+                        data-desc="A dynamic highlight reel capturing the energy and key moments of a major tech conference. We delivered a fast-paced edit with motion graphics and a modern soundtrack."
+                        data-video-src="public/future_song.mp4">
+                        
+                        <img src="public/futureimg.png" alt="Event Highlight Thumbnail">
+                        <div class="project-card-overlay">
+                            <div class="project-card-info">
+                                <h3>Future Forward</h3>
+                                <span>Global Innovation Summit</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="portfolio-subsection alt-bg">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Our Craft</h2>
+                    <p>From Concept to Final Cut, Delivered with Precision</p>
+                </header>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-scroll"></i>
+                        <h3>Scriptwriting</h3>
+                        <p>Weaving narratives that resonate and inspire, building solid foundations for every visual story.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-video"></i>
+                        <h3>Filming & Cinematography</h3>
+                        <p>Capturing breathtaking visuals in up to 8K resolution, with professional equipment and artistic flair.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-cut"></i>
+                        <h3>Editing & Color</h3>
+                        <p>Assembling the story with precision, enhancing mood through expert color grading and seamless transitions.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-magic-wand-sparkles"></i>
+                        <h3>Animation & VFX</h3>
+                        <p>Bringing imagination to life with stunning motion graphics, 2D/3D animation, and seamless visual effects.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-volume-high"></i>
+                        <h3>Sound Design</h3>
+                        <p>Creating immersive audio landscapes with custom scores, foley, voiceovers, and crystal-clear mixing.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-clapperboard"></i>
+                        <h3>Production Management</h3>
+                        <p>Coordinating every stage of production, ensuring smooth execution from concept to final delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="portfolio-subsection">
+            <div class="container">
+                <header class="section-header">
+                    <h2>From Our Clients</h2>
+                </header>
+                <div class="testimonial-carousel-wrapper">
+                    <button class="carousel-control prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="testimonial-carousel">
+                        <div class="testimonial-slider">
+                            
+                            <div class="testimonial-slide">
+                                <p class="testimonial-quote">"They didn't just film a video; they captured the soul of our brand. The final product was pure cinematic magic. Absolutely breathtaking work."</p>
+                                <span class="testimonial-author">- CEO, Aurelius Watches</span>
+                            </div>
+                            
+                            <div class="testimonial-slide">
+                                <p class="testimonial-quote">"The level of professionalism and creative vision is unmatched. They took our vague idea and turned it into a masterpiece that exceeded all expectations."</p>
+                                <span class="testimonial-author">- Band Manager, The Midnight Drive</span>
+                            </div>
+
+                            <div class="testimonial-slide">
+                                <p class="testimonial-quote">"Working with this team was a seamless experience. They are masters of their craft, and their attention to detail is truly remarkable. Highly recommend for any serious production."</p>
+                                <span class="testimonial-author">- Founder, Quantum Dynamics</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-control next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="portfolio-subsection alt-bg">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Meet the Visionaries</h2>
+                    <p>The Talented Minds Behind Every Frame</p>
+                </header>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-img-wrapper">
+                            <img src="./public/Director.png" alt="Team Member Elena">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
+                            </div>
+                        </div>
+                        <h3>Elena Rostova</h3>
+                        <span class="team-role">Creative Director</span>
+                        <p>Elena is the driving force behind our narratives, with a background in classical filmmaking and a passion for compelling storytelling.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img-wrapper">
+                            <img src="./public/Photographer.png" alt="Team Member Marcus">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
+                            </div>
+                        </div>
+                        <h3>Marcus Cole</h3>
+                        <span class="team-role">Director of Photography</span>
+                        <p>With an artist's eye, Marcus transforms light and shadow into unforgettable cinematic moments, elevating every visual.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img-wrapper">
+                            <img src="./public/Editor.png" alt="Team Member Sam">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a>
+                            </div>
+                        </div>
+                        <h3>Sam Chen</h3>
+                        <span class="team-role">Lead Editor & VFX</span>
+                        <p>Sam is our post-production wizard, meticulously crafting the final cut and bringing impossible ideas to life with stunning effects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section> <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <div class="modal-video-container">
+            </div>
+            <div class="modal-details">
+                <h2 id="modal-title"></h2>
+                <div class="project-meta">
+                    <span id="modal-client"></span> | <span id="modal-date"></span>
+                </div>
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="portfolio-subsection">
+      <div class="container">
+        <header class="section-header">
+            <h2>Contact Us</h2>
+        </header>
+        <div class="contact-main">
+          <div class="contact-caption">
+            Let's make your vision shine brighter than the cosmos.<br />
+            <strong>Chat instantly with our cinematic team on WhatsApp!</strong>
+          </div>
+          <div class="contact-options">
+            <a class="contact-btn" href="https://wa.me/1234567890?text=Hi%20Illuminate%20Media%2C%20I%20have%20a%20project%20enquiry!" target="_blank">
+              <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+            </a>
+          </div>
+          <div class="other-socials">
+            <a href="mailto:hello@illuminatemedia.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/company/illuminatemedia" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/illuminatemedia" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+          <div class="map-section">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.9340348138127!2d-118.3721023!3d34.1377217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2be6773c84047%3A0x142a7c2911cb88c5!2sStudio%20City%2C%20CA%2090068%2C%20USA!5e0!3m2!1sen!2sin!4v1697740898000!5m2!1sen!2sin" 
+              allowfullscreen="" aria-hidden="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="footer">
+      <div class="container">
+        <p>© <span id="current-year">2025</span> Illuminate Media. All Rights Reserved. | Designed with passion for cinematic storytelling.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
