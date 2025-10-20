@@ -851,7 +851,10 @@ body {
         font-size: 2rem;
         padding: 5px 0;
     }
-
+    .testimonial-slide {
+        padding: 40px 20px; /* Gives text more room */
+    }
+    
     /* Team image sizing */
     .team-img-wrapper {
         width: 200px;
