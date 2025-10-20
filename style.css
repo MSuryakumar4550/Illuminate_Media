@@ -113,6 +113,15 @@ body {
     padding: 15px 0;
 }
 
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .logo {
     font-family: var(--elegant-font);
     font-size: 1.8rem;
@@ -770,77 +779,68 @@ body {
 
 
 /* === 9. Responsive Design === */
-@media (max-width: 992px) {
-    .section-header h2 {
-        font-size: 2.5rem;
-    }
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-    .services-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    .testimonial-carousel-wrapper {
-        flex-direction: column;
-        gap: var(--spacing-unit);
-    }
-    .carousel-control {
-        position: static;
-        transform: none;
-        padding: 10px 0;
-    }
-    .testimonial-carousel {
-        padding: calc(1.5 * var(--spacing-unit)) var(--spacing-unit);
-    }
-    .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .team-img-wrapper {
-        width: 220px;
-        height: 220px;
-    }
-    .team-member h3 {
-        font-size: 1.6rem;
-    }
-    .team-member .team-role {
-        font-size: 1rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* Mobile responsive styles for screens <= 768px */
 @media (max-width: 768px) {
     .portfolio-subsection,
     .section {
-        padding: 80px 0;
+        padding: 60px 0; /* Reduced padding */
     }
     
     .project-grid,
     .services-grid,
     .team-grid {
-        grid-template-columns: 1fr; /* Single column */
+        grid-template-columns: 1fr; /* Single column layout */
     }
+    
     .project-card img {
-        height: 200px;
+        height: 200px; /* Fixed image height */
     }
 
+    /* Hero section font size adjustments */
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.8rem; /* Smaller font for mobile */
     }
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    /* Padding fix for about text */
+    .about-text {
+        padding: 0 15px; /* Padding so text doesn’t touch screen edges */
+    }
+
+    /* Navigation styling */
     .navbar {
-        flex-direction: column;
+        flex-direction: row; /* Logo and buttons side-by-side */
+        padding: 10px 15px; /* Padding for mobile header */
     }
     .nav-links {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 65px; /* Positioned below header */
+        left: 0;
+        width: 100%;
+        background-color: #000; /* Solid black background */
+        padding: 10px 0;
+        z-index: 999;
+        border-top: 1px solid var(--border-color);
+    }
+    /* Show nav menu when active class is toggled by JS */
+    .nav-links.active {
+        display: flex;
     }
     .nav-links a {
-        margin: 5px 10px;
+        margin: 10px 20px; /* Spacing for vertical menu */
+        text-align: center;
+        padding: 10px;
+    }
+    /* Show hamburger menu toggle button */
+    .menu-toggle {
+        display: block;
     }
 
+    /* Adjust font sizes for testimonial and carousel */
     .testimonial-quote {
         font-size: 1.2rem;
     }
@@ -848,10 +848,14 @@ body {
         font-size: 2rem;
         padding: 5px 0;
     }
+
+    /* Team image sizing */
     .team-img-wrapper {
         width: 200px;
         height: 200px;
     }
+
+    /* Modal detail font and padding */
     .modal-details h2 {
         font-size: 1.8rem;
     }
@@ -859,28 +863,15 @@ body {
         padding: var(--spacing-unit);
     }
 
-    /* Contact Responsive */
-    .contact-main { padding: 30px 15px; }
-    .map-section iframe { height: 200px; }
-    .contact-btn { padding: 12px 25px; font-size: 1rem;}
-}
-
-@media (max-width: 480px) {
-    .section-header h2 {
-        font-size: 2.1rem;
+    /* Contact section responsiveness */
+    .contact-main {
+        padding: 30px 15px;
     }
-    .section-header p {
+    .map-section iframe {
+        height: 200px;
+    }
+    .contact-btn {
+        padding: 12px 25px;
         font-size: 1rem;
-    }
-    .project-card-info h3 {
-        font-size: 1.3rem;
-    }
-    .modal-content {
-        width: 95%;
-        margin: 5% auto;
-    }
-    .close-modal {
-        font-size: 2.5rem;
-        right: 15px;
     }
 }

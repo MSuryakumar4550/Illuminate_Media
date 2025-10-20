@@ -1,119 +1,106 @@
-/* This file contains the logic for the Illuminate Media website.
-   - Project Modal: Handles opening/closing the portfolio video popup.
-   - Testimonial Carousel: Controls the client testimonial slider.
-*/
-
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Illuminate Media website loaded!');
-    
-    // --- 1. Theme Toggle Logic (Example) ---
-    const themeToggle = document.querySelector('.theme-toggle-switch');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            alert('Theme toggle clicked! (Add your logic here)');
-            // document.body.classList.toggle('light-mode');
+
+    // --- 1. Mobile Menu Toggle ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Optional: Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
     }
 
-    // --- 2. Project Modal Logic ---
-    const projectCards = document.querySelectorAll('.project-card');
+    // --- 2. Testimonial Carousel ---
+    const slider = document.querySelector('.testimonial-slider');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        if (index >= slides.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else {
+            currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            showSlide(currentIndex + 1);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            showSlide(currentIndex - 1);
+        });
+    }
+
+    // --- 3. Project Modal ---
     const modal = document.getElementById('project-modal');
+    const projectCards = document.querySelectorAll('.project-card');
     const closeModalBtn = document.querySelector('.close-modal');
+    
     const modalTitle = document.getElementById('modal-title');
     const modalClient = document.getElementById('modal-client');
     const modalDate = document.getElementById('modal-date');
     const modalDesc = document.getElementById('modal-desc');
-    const videoContainer = document.querySelector('.modal-video-container');
+    const modalVideoContainer = document.querySelector('.modal-video-container');
 
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
-            // 1. Get data from data-* attributes
-            const title = card.dataset.title;
-            const client = card.dataset.client;
-            const date = card.dataset.date;
-            const desc = card.dataset.desc;
-            const videoSrc = card.dataset.videoSrc; // Get the local file path
+            // Get data from the clicked card
+            modalTitle.textContent = card.dataset.title;
+            modalClient.textContent = card.dataset.client;
+            modalDate.textContent = card.dataset.date;
+            modalDesc.textContent = card.dataset.desc;
 
-            // 2. Populate modal
-            modalTitle.textContent = title;
-            modalClient.textContent = `Client: ${client}`;
-            modalDate.textContent = `Date: ${date}`;
-            modalDesc.textContent = desc;
-            
-            // 3. Create local <video> embed
-            videoContainer.innerHTML = `
+            // Create video element
+            const videoSrc = card.dataset.videoSrc;
+            modalVideoContainer.innerHTML = `
                 <video controls autoplay muted loop playsinline>
                     <source src="${videoSrc}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             `;
             
-            // 4. Show modal
-            modal.style.display = 'flex';
+            modal.style.display = 'flex'; // Show the modal
         });
     });
 
-    // Function to close the modal
-    const closeTheModal = () => {
-        modal.style.display = 'none';
-        // Stop the video by clearing the container
-        videoContainer.innerHTML = '';
-    };
+    function closeModal() {
+        modal.style.display = 'none'; // Hide the modal
+        modalVideoContainer.innerHTML = ''; // Stop and remove the video
+    }
 
     if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', closeTheModal);
+        closeModalBtn.addEventListener('click', closeModal);
     }
 
-    // Close modal by clicking outside the content
-    if (modal) {
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeTheModal();
-            }
-        });
-    }
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            closeTheModal();
+    // Close modal if user clicks outside the content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
         }
     });
 
-    // --- 3. Testimonial Carousel Logic ---
-    const slider = document.querySelector('.testimonial-slider');
-    
-    // Check if slider exists before running carousel logic
-    if (slider) {
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const prevBtn = document.querySelector('.carousel-control.prev');
-        const nextBtn = document.querySelector('.carousel-control.next');
-        
-        let currentIndex = 0;
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            // Wrap around logic
-            if (index >= totalSlides) {
-                currentIndex = 0;
-            } else if (index < 0) {
-                currentIndex = totalSlides - 1;
-            } else {
-                currentIndex = index;
-            }
-
-            const offset = -currentIndex * 100;
-            slider.style.transform = `translateX(${offset}%)`;
-        }
-
-        if (nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => {
-                showSlide(currentIndex + 1);
-            });
-
-            prevBtn.addEventListener('click', () => {
-                showSlide(currentIndex - 1);
-            });
-        }
+    // --- 4. Set Current Year in Footer ---
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
+
 });
