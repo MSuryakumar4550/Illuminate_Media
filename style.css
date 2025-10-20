@@ -785,7 +785,10 @@ body {
     .section {
         padding: 60px 0; /* Reduced padding */
     }
-    
+    .about-grid {
+         grid-template-columns: 1fr; /* This forces it to a single column */
+        gap: var(--spacing-lg); /* Adds nice spacing between the stacked items */
+    }
     .project-grid,
     .services-grid,
     .team-grid {
